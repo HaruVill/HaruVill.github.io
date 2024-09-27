@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <style>
+        body {
+            background-image: url(imagen/fondosobre.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sobre {
+            width: 650px;
+            height: 400px;
+            background-color: #ffc7e8d2;
+            border: 0px solid #000000;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 4px 10px #974992;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+        .tapa {
+            width: 100%;
+            height: 40%;
+            background-color:#e9a6fac2;
+            position: absolute;
+            top: 0;
+            border-radius: 5px 5px 0 0;
+            transition: transform 0.5s;
+        }
+        .direccion {
+            font-family: 'Pumpkin Story';
+            padding: 0px;
+            font-size: 70px;
+            color: #000000;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            background-position: center;
+            padding-right: 120px;
+            padding-left: 120px;
+        
+        }
+        .mensaje {
+            text-align: center;
+            padding: 0px;
+            font-size: 16px;
+            color: #000000;
+            opacity: 0;
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            transition: opacity 0.5s;
+            font-family: 'KG Do You Love Me';
+            font-size: 380%;
+            font-weight: 100;
+        }
+        .mensaje.visible {
+            opacity: 1;
+        }
+        .direccion.hidden {
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <audio autoplay> 
+        <source src="imagen/_Letra. ♡ (online-audio-converter.com).mp3" type="audio/mp3">
+    </audio>
+    <div class="sobre" onclick="toggleSobre()">
+        <div class="tapa" id="tapa">
+            <div class="triangulo"></div>
+        </div>
+        <div class="direccion" id="direccion">
+            <p>🌼Dale clic🌼</p>
+        </div>
+        <div class="mensaje" id="mensaje">
+            <br>
+            ❤️❤️❤️<br>
+            Yo sí te quiero... Y más de lo que te he podido demostrar.
+            <br>❤️❤️❤️
+        </div>
+    </div>
+
+    <script>
+        let abierto = false;
+
+        function toggleSobre() {
+            const tapa = document.getElementById('tapa');
+            const mensaje = document.getElementById('mensaje');
+            const direccion = document.getElementById('direccion');
+
+            if (!abierto) {
+                tapa.style.transform = 'translateY(-100%)';
+                mensaje.classList.add('visible');
+                direccion.classList.add('hidden');
+            } else {
+                tapa.style.transform = 'translateY(0)';
+                mensaje.classList.remove('visible');
+                direccion.classList.remove('hidden');
+            }
+            abierto = !abierto;
+        }
+    </script>
+</body>
+</html>
+
+
